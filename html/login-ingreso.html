@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-login-ingreso.css">
+    <link rel="icon" href="/assets/logo/logotype.png" type="icono">
+    <title>Iniciar Sesión - American Bully CrossBox</title>
+</head>
+<body>
+    <div class="contenedor-principal">
+
+        <div class="contenedor-contenedores">
+            <div class="contenedor-izquierdo">
+                <p class="titulo-1">¡Bienvenido de vuelta!</p>
+                <p class="titulo-2">Inicia sesión en tu cuenta</p>
+
+                <form id="formulario-login" >
+                    <fieldset class="formulario" >
+
+                        <div class="container-correo">
+                            <label class="labels" for="correo-ingreso">Correo</label>
+                            <input type="mail" class="inputs" name="correo" id="correo-ingreso" placeholder="Ingresa tu correo">
+                        </div>
+                        
+                        <div class="container-contrasena">
+                            <label class="labels" for="clave-ingreso">Contraseña</label>
+                            <input type="password" class="inputs" name="clave" id="clave-ingreso" placeholder="Ingresa tu clave">
+                            <img class="logo-ojo" src="/assets/logos-formulario/invisible.png" alt="lgo-ojo" id="ojo-inicio">
+                        </div>
+                        
+                    </fieldset>
+                </form>
+
+                <div class="botones" >
+                    <button class="boton" id="ingresar" type="submit">Iniciar sesión</button>
+                </div>
+
+                <p class="olvido-contrasena" >¿No tienes una cuenta? <span> <a class="registrate-aqui" href="/html/login-registro.html">Regístrate aquí</span></a></p>
+            </div>
+
+            <div class="contenedor-medio"></div>
+
+            <div class="contenedor-derecho">
+                <img class="logo-box" src="/assets/logo/logotype.png" alt="Logo American Bully CrossBox">
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/login-ingreso.js"></script>
+    <script src="/js/validar-login-registro.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

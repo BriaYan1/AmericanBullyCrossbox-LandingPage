@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("/assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Black";
+    src: url("/assets/fonts/Poppins/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Semakin";
+    src: url("/assets/fonts/Semakin.otf") format("truetype");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family:sans-serif;
+}
+body{
+    background-image: url(/assets/competitions/competitionsbackg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    min-height: 100vh;
+}
+:root{
+    --color--verde-primario: #60ff00;
+    --color--verde-secundario: #44B200;
+    --color--verde-terciario: #8FFF4C;
+    --color--negro-primario: #000000;
+    --color--negro-secundario: #1A1A1A;
+    --color--blanco-primario: #FFFFFF;
+    --color--blanco-secundario: #E5E5E5;
+}
+
+.contenedor-principal{
+    padding: 3rem 8rem;
+}
+
+.titulo-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo-logo p {
+    color: var(--color--verde-primario);
+    font-family: "Semakin";
+    font-size: 5rem;
+    text-align: center;
+}
+
+.titulo-logo img {
+    width: 12rem;
+    margin-bottom: 1rem;
+}
+
+.descripcion {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.descripcion p {
+    color: var(--color--blanco-primario);
+    margin: 3rem;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    line-height: 2.5rem;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 3rem;
+}
+
+.imagenes img {
+    width: 80%;
+    height: 80%;
+    border: var(--color--verde-primario) solid 0.3rem;
+    border-radius: 2rem;
+}
+
+.caja-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caja-imagen p {
+    margin-top: 2rem;
+}
+
+.resaltado{
+    color: var(--color--verde-primario);
+    font-family: "Poppins-Bold";
+    font-size: 1.5rem;
+}
+
+.caja-imagen p{
+    padding-bottom: 1.2rem;
+    color: var(--color--blanco-primario);
+    font-family: "Poppins-Regular";
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1030px) {
+    .contenedor-principal{
+        padding: 3rem;
+    }
+
+    .titulo-logo p {
+    font-size: 3.5rem;
+    }
+
+    .imagenes {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+}

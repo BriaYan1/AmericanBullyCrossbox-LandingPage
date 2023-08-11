@@ -1,0 +1,1437 @@
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("/assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Black";
+    src: url("/assets/fonts/Poppins/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Semakin";
+    src: url("/assets/fonts/Semakin.otf") format("truetype");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family:sans-serif;
+}
+:root{
+    --color--verde-primario: #60ff00;
+    --color--verde-secundario: #44B200;
+    --color--verde-terciario: #8FFF4C;
+    --color--negro-primario: #000000;
+    --color--negro-secundario: #1A1A1A;
+    --color--blanco-primario: #FFFFFF;
+    --color--blanco-secundario: #E5E5E5;
+}
+
+/*=======================| SECCION BARRA DE NAVEGACION |============================*/
+a {
+    text-decoration: none;
+}
+.nav--container{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 7rem;
+    background-color: var(--color--negro-primario);
+    z-index: 2;
+    overflow-x: hidden; /*Quita el scroll horizontal*/
+}
+.nav--left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav--logo{
+    padding-left: 1.5rem;
+    padding-right: 3rem;
+}
+.nav--logo img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.nav--elements{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3rem;
+}
+
+.button--cerrar{
+    display: none;
+    border: 0;
+    font-size: 2rem;
+    color: var(--color--blanco-secundario);
+    background-color: var(--color--negro-primario);
+    cursor: pointer;
+}
+
+.nav--elements ul{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav--elements ul li {
+    font-family: 'Poppins-Bold';
+    font-size: 1.6rem;
+    color: var(--color--blanco-primario);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: transform 120ms linear;
+}
+
+.nav--elements ul li:hover {
+    transform: scale(1.07);
+}
+
+.nav--elements ul li img{
+    display: none;
+}
+.nav--elements ul li a {
+    color: var(--color--blanco-primario);
+    transition: color 300ms;
+}
+
+.nav--elements ul li a:hover{
+    color: var(--color--verde-primario);
+}
+
+/*VERSION TABLET MENU HAMBURGUESA*/
+
+@media (max-width: 1030px) {
+
+    .nav--elements {
+        display: flex;
+        position: fixed;
+        width: 32vh;
+        top: 0;
+        right: 0;
+        background: var(--color--negro-primario);
+        bottom: 0;
+        padding: 2rem 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        transform: translateX(27rem);
+        opacity: 0;
+        pointer-events: none;
+        justify-content: space-between;
+        transition: opacity 250ms linear,
+                    transform 250ms linear;
+    }
+
+    .nav--elements ul li:hover {
+        transform: scale(1.02);
+    }
+
+    .nav--elements-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0rem);
+    }
+
+    .container--ul {
+        margin-top: 4rem;
+    }
+
+    .container--ul ul button img{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .container--ul ul {
+        padding-top: 1rem;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: normal;
+    }
+
+    .container--ul ul li img {
+        display: flex;
+        padding-right: 1rem;
+        padding-top: 0.4rem;
+    }
+
+    .container--ul ul li a {
+        display: flex;
+    }
+
+    .container--ul ul li a span {
+        padding-left: 1rem;
+        padding-top: 0.8rem;
+    }
+
+    .scale-up-center{
+        animation:scale-up-center 1.5s; 
+    } 
+    
+    @keyframes scale-up-center{ 
+        0%{transform:scale(.5)} 
+        100%{transform:scale(1)} 
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~MENU HAMBURGUESA~~~~~~~~~~~~~~~~~~~~~~ */
+
+    .boton-hamburguesa-container {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        height: 6.97rem;
+        width: 4rem;
+        margin-right: 2rem;
+        right: 0;
+    }
+
+    .boton-hamburguesa {
+        display: flex;
+        position: absolute;
+        height: 4rem;
+        width: 4rem;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .lineas {
+        background-color: #ffffff;
+        border-radius: 0.8rem;
+        width: 85%;
+        height: 0.5rem;
+    }
+    
+    .linea1 {
+        margin-top: 0.75rem;
+        transition: all 250ms linear;
+    }
+
+    .linea2 {
+        margin-top: 0.5rem;
+        transition: all 250ms linear;
+    }
+
+    .linea3 {
+        margin-top: 0.5rem;
+        transition: all 250ms linear;
+    }
+
+    .linea1-visible {
+        position: relative;
+        margin-top: 1.76rem;
+        transform: rotate(45deg);
+        z-index: 2;
+    }
+
+    .linea2-visible {
+        width: 0;
+        opacity: 0;
+    }
+
+    .linea3-visible {
+        position: relative;
+        margin-top: -1.47rem;
+        transform: rotate(-45deg);
+        z-index: 1;
+    }
+}
+
+/*=======================| SECCION PORTADA|============================*/
+.container--portada{
+    background-image: url(/assets/home/homebackg.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh; 
+}
+.titulos--portada{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: var(--color--blanco-primario);
+    font-size: 5rem;
+    font-family: 'Semakin', sans-serif;
+    padding: 7rem;
+    letter-spacing: 0.2rem;
+    font-weight: bolder;
+}
+.container--titulos{
+    padding-top: 10rem;
+}
+
+.h1-2--portada span{
+    color: var(--color--verde-primario);
+}
+
+/*VERSION TABLET*/
+
+@media screen and (min-width: 768px) and (max-width: 1030px){
+    .container--portada {
+        background-image: url(/assets/home/responsive.png);
+        background-position: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh; 
+    }
+
+    .titulos--portada {
+        padding: 5rem;
+        font-size: 6rem;
+    }
+}   
+
+/*VERSION MOBILE*/
+
+@media screen and (max-width: 768px){
+    .container--portada {
+        background-image: url(/assets/home/responsive.png);
+        background-position: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh; 
+    }
+
+    .titulos--portada {
+        padding: 5rem;
+        font-size: 2rem;
+    }
+}   
+
+/*=======================| SECCION QUE ES CROSSFIT |============================*/
+.cross--main {
+    background-image: url(/assets/schedules/schedulesbackg\(sinlinea\).jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.cross--container {
+    display: flex;
+    width: 100%;
+    height: 58rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem;
+}
+
+.cross-titulo {
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 5rem;
+}
+
+.cross-contenido {
+    font-size: 2.3rem;
+    text-align: justify;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color--negro-primario);
+}
+
+.strong{
+    font-weight: 650;
+    color: var(--color--negro-primario);
+}
+
+/*VERSION TABLET*/
+
+@media screen and (min-width: 768px) and (max-width: 1030px) {
+    .cross--main {
+        height: auto;
+    }
+
+    .cross--container {
+        height: auto;
+        padding: 3rem;
+        margin-top: 10rem;
+    }
+
+    .cross-contenido {
+        font-size: 3rem;
+        text-align: justify;
+        padding-bottom: 12rem;
+    }
+}
+
+/*VERSION MOBILE*/
+
+@media screen and (max-width: 768px) {
+    .cross--main {
+        height: auto;
+    }
+
+    .cross-titulo {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .cross--container {
+        height: auto;
+        padding: 2rem;
+        margin-top: 5rem;
+    }
+
+    .cross-contenido {
+        font-size: 1.7rem;
+        text-align: justify;
+        padding-bottom: 12rem;
+    }
+}
+
+/*=======================| SECCION NOSOTROS |============================*/
+
+.carrusel_container {
+    background-image: url(/assets/nosotros/aboutusbackg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto; 
+    padding-bottom: 4rem;
+}
+
+.titulo-nosotros {
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
+    color: var(--color--blanco-primario);
+}
+
+.parrafo_nosotros-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.parrafo_nosotros {
+    color: var(--color--blanco-primario);
+    font-family: "Poppins-Regular";
+    font-size: 2rem;
+    margin: 3rem;
+    
+}
+
+.parrafo_nosotros--subrayado{
+    color: var(--color--verde-primario);
+}
+
+.div_contenedor_slider {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-slider {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    transform: scale(0.92);
+    padding: 0rem 4rem;
+    justify-content: center;
+}
+
+.slider-izquierdo, .slider-derecho {
+    width: 5%;
+}
+
+.slider-izquierdo img, .slider-derecho img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider-imagenes {
+    width: 30%;
+    border: 0.4rem solid var(--color--verde-primario);
+}
+
+.slider-imagenes img {
+    height: 50rem;
+    width: 5rem;
+    object-fit: cover;
+}
+
+.slider-imagenes img {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1030px) {
+    .carrusel_container {
+        height: auto;
+    } 
+
+    .contenedor-slider {
+        padding-bottom: 5rem;
+        transform: scale(1);
+    }
+
+    .slider-imagenes {
+        width: 90%;
+    }
+
+    .slider-derecho img, .slider-izquierdo img{
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .carrusel_container {
+        height: auto;
+    }
+
+    .titulo-nosotros {
+        font-size: 4rem;
+    }
+
+    .contenedor-slider {
+        gap: 2rem;
+        padding: 0rem;
+    }
+
+    .slider-imagenes {
+        width: 90%;
+    }
+
+    .slider-imagenes img {
+        height: 35rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .contenedor-slider {
+        margin-bottom: 6rem;
+        transform: scale(1);
+    }
+
+    .parrafo_nosotros{
+        font-size: 1.5rem;
+    }
+
+    .slider-derecho img, .slider-izquierdo img{
+        width: 2rem;
+    }
+}
+
+
+/*============================| SECCION DE COACHES |================================*/
+
+.coa-container {
+    background-image: url(/assets/coaches/coachesbackg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.cajas-coach {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 5rem;
+    margin-bottom: 8rem;
+}
+
+.coa-titulo {
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 9rem;
+}
+
+/*Caja de Coaches*/
+.caja-coa {
+    display: grid;
+    grid-template-columns: 3rem 3rem 3rem 3rem 3rem 5rem 5rem;
+    grid-template-rows: 3rem 6rem 6rem 6rem 6rem 7rem;
+    width: fit-content;
+    height: fit-content;
+    gap: 0%;
+}
+
+.headcoach {
+    background-color: var(--color--negro-primario);
+    grid-row: 1/4;
+    grid-column: 1/2;
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aux-hcoa {
+    transform: rotate(270deg);
+    color: var(--color--verde-primario);
+    grid-row: 1/5;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.coach-name-2{
+    grid-row: 3/7;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 22rem;
+}
+
+.aux-name {
+    transform: rotate(270deg);
+    color: var(--color--negro-primario);
+    grid-row: 3/7;
+    font-weight: 900;
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+.contenedor{
+    border-color: var(--color--negro-primario);
+    border: 0.5rem solid;
+    grid-column: 2/8;
+    grid-row: 1/7;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.caja-img img {
+    width: 100%;
+}
+
+.coach {
+    background-color: var(--color--negro-primario);
+    grid-row: 1/3;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 3.4rem;
+}
+
+.coach-name-3{
+    grid-row: 3/7;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 15rem;
+}
+
+.aux-coa {
+    transform: rotate(270deg);
+    color: var(--color--verde-primario);
+    grid-row: 1/5;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.coach-name{
+    grid-row: 3/7;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 13.8rem;
+}
+
+/*HOVER COACHES*/
+
+.contenedor-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor-textos{
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: 0.7s;
+}
+
+.contenedor-titulo{
+    font-size: 2rem;
+    font-family: 'Poppins-Regular';
+    font-weight: 768;
+    color: var(--color--verde-primario);
+    padding: 1rem 1rem 0 1rem;
+}
+
+.span{
+    color: var(--color--verde-primario);
+    font-weight: bold;
+}
+
+.contenedor-parrafo{
+    font-size: 1.2rem;
+    font-family: 'Poppins-Regular';
+    font-weight: 300;
+    color: var(--color--blanco-primario);
+    padding: 1rem;
+}
+
+.descripcion-coach{
+    font-size: 1.2rem;
+    font-family: 'Poppins-Regular';
+    font-weight: 300;
+    color: var(--color--verde-primario);
+    padding-left: 1rem;
+}
+
+.contenedor:hover .contenedor-textos{
+    bottom: 0;
+}
+
+
+/*VERSION TABLET*/
+
+@media screen and (min-width: 768px) and (max-width: 1030px){
+
+    .coa-container {
+        background-image: url(/assets/plans/plansbackg\ \(1\).jpg);
+        width: 100%;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    .coa-titulo {
+        margin-top: 8rem;
+    }
+
+    .cajas-coach {
+        display: grid;
+        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*VERSION MOBILE*/
+
+@media screen and (max-width: 768px) {
+
+    .coa-container {
+        background-image: url(/assets/plans/plansbackg\ \(1\).jpg);
+        width: 100%;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    .coa-titulo {
+        font-size: 4rem;
+        margin-top: 8rem;
+        margin-bottom: 2rem;
+    }
+
+    .cajas-coach {
+        display: grid;
+        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0.87);
+    }
+}
+
+/*============================| SECCION DE COMPETENCIAS |================================*/
+
+.compe-container {
+    background-image: url(/assets/competitions/competitionsbackg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; 
+}
+
+.titulo-compe {
+    color: var(--color--blanco-primario);
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 9rem;
+}
+
+.contenedor-cajas {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.caja-competencia-padre{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.caja-competencia {
+    width: 18rem;
+    height: 29.8rem;
+    background-color: var(--color--blanco-primario);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-caja-compe {
+    font-size: 1.80rem;
+    font-family: "Poppins-Bold";
+    text-align: center;
+}
+
+.img-compe {
+    object-fit: cover;
+    width: 16.5rem;
+    height: 26.3rem;
+}
+
+.imagen-compe {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.descripcion-competencia{
+    position: absolute;
+    text-align: center;
+    padding-top: 15rem;
+    font-family: "Poppins-Bold";
+    color: var(--color--verde-primario);
+    font-size: 1.3rem;
+    padding-left: 1.3rem
+}
+
+.logo-compe {
+    width: 5rem;
+    position: absolute;
+    right: -1.5rem;
+    bottom: -1.5rem;
+}
+
+.logo-andes {
+    width: 7rem;
+    right: -2.5rem;
+}
+
+.boton{
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton a button{
+    background-color: var(--color--verde-primario);
+    color: var(--color--negro-primario);
+    border: none;
+    height: 3rem;
+    width: 10rem;
+    font-family: "Poppins-Bold";
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.boton a button:hover{
+    background-color: var(--color--verde-terciario);
+    transition: all 0.4s;
+}
+
+@media screen and (max-width: 1030px) {
+
+    .compe-container {
+        height: auto;
+        width: 100%;
+    }
+
+    .contenedor-cajas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo-compe {
+        margin-top: 5rem;
+    }
+
+    .caja-competencia {
+        margin-bottom: 4rem;
+    }
+
+    .caja-competencia:nth-child(4) {
+        margin-bottom: 10rem;
+    }
+
+    .boton{
+        padding-top: 0;
+        padding-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titulo-compe {
+        font-size: 4rem;
+        margin-top: 5rem;
+    }
+}
+
+
+
+/*============================| SECCION DE HORARIOS |================================*/
+
+.hr-container {
+    background-image: url(/assets/schedules/schedulesbackg\(sinlinea\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.hr-titulo {
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 9rem;
+}
+
+.hr-lista {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.hr-lista-1{
+    display: flex;
+    gap: 6rem;
+}
+
+.caja {
+    display: grid;
+    grid-template-columns: 3rem 3rem 3rem 3rem 3rem 3rem 3rem 3rem;
+    grid-template-rows: 1.5rem 1.5rem 6rem 6rem 6rem 6rem;
+    width: fit-content;
+    height: fit-content;
+    gap: 0%;
+}
+
+.dias {
+    background-color: var(--color--blanco-primario);
+    padding-left: 0.4rem;
+    grid-column: 1/6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.40rem;
+    font-weight: 800;
+    grid-row: 1/3;
+    line-height: 3.3rem;
+    display: inline-block;
+}
+
+.am-pm {
+    background-color: var(--color--negro-primario);
+    grid-row: 3/4;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.aux {
+    transform: rotate(270deg);
+    color: var(--color--verde-primario);
+    z-index: 1;
+}
+
+.lista {
+    border-color: var(--color--negro-primario);
+    border: 0.5rem solid;
+    grid-column: 2/8;
+    grid-row: 3/7;
+    display: flex;
+    justify-content: center;
+}
+
+.elementos-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    justify-content: space-around;
+}
+
+.hr-lista-2{
+    display: flex;
+    gap: 6rem;
+}
+
+.dias-2 {
+    background-color: var(--color--blanco-primario);
+    padding-left: 0.7rem;
+    grid-column: 1/4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.40rem;
+    font-weight: 800;
+    grid-row: 1/3;
+    line-height: 3.3rem;
+    display: inline-block;
+}
+
+.am-pm-2 {
+    background-color: var(--color--negro-primario);
+    grid-row: 3/5;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding-left: 0.5rem;
+}
+
+.aux-2 {
+    transform: rotate(270deg);
+    color: var(--color--verde-primario);
+    grid-row: 3/5;
+    width: 10rem;
+    height: 10rem;
+}
+
+.am-pm-3 {
+    background-color: var(--color--negro-primario);
+    grid-row: 3/5;
+    grid-column: 1/2;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    padding-left: 0.3rem;
+    padding-top: 0.5rem;
+}
+
+.aux-3 {
+    transform: rotate(270deg);
+    color: var(--color--verde-primario);
+    grid-row: 3/5;
+    width: 10.5rem;
+    height: 10rem;
+}
+
+/*VERSION TABLET*/
+
+@media screen and (min-width: 768px) and (max-width: 1030px) {
+    .hr-container {
+        width: 100%;
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    .hr-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hr-lista-1{
+        display: flex;
+    }
+
+    .hr-lista-2{
+        display: flex;
+    }
+}
+
+/*VERSION MOBILE*/
+
+@media screen and (max-width: 768px) {
+    .hr-container {
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    .hr-titulo {
+        font-size: 4rem;
+        margin-top: 5rem;
+    }
+
+    .hr-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hr-lista-1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hr-lista-2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hr-lista-2 .caja:last-child {
+        margin-top: 2rem;
+    }
+}
+
+/*============================| SECCION DE MEMBRESIAS |================================*/
+
+.planes-container {
+    background-image: url(/assets/plans/plansbackg\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-planes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.planes-titulo {
+    font-family: 'Semakin', sans-serif;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 9rem;
+}
+
+.caja-planes {
+    display: grid;
+    grid-template-columns: 3rem 5rem 20rem;
+    grid-template-rows: 4rem 7rem 7rem 5rem;
+}
+
+.caja-planes:nth-child(2) {
+    display: grid;
+    grid-template-columns: 3rem 5rem 20rem;
+    grid-template-rows: 4rem 9rem 5.3rem 5rem;
+}
+
+.dias-plan {
+    grid-column: 1 / 4;
+    font-size: 2.3rem;
+    font-family: "Poppins-Bold";
+}
+
+.tipo-plan {
+    grid-row: 2 / 3;
+    font-size: 2rem;
+    font-family: "Poppins-Bold";
+    background-color: var(--color--negro-primario);
+    color: var(--color--verde-primario);
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.tipo-plan p {
+    padding-bottom: 1.2rem;
+    transform: rotate(270deg);
+    padding-top: 1.3rem;
+}
+
+.precio-plan {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    font-size: 4rem;
+    font-family: "Semakin";
+    border-color: var(--color--negro-primario);
+    border: 0.4rem solid;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tiempo-plan {
+    grid-row: 4 / 5;
+    grid-column: 2 / 4;
+    font-size: 3rem;
+    font-family: "Poppins-Bold";
+    background-color: var(--color--negro-primario);
+    color: var(--color--verde-primario);
+    text-align: center;
+}
+
+.inscripcion {
+    display: flex;
+    margin-top: 6rem;
+    justify-content: center;
+    font-size: 2rem;
+}
+.inscrip-1 {
+    color: var(--color--blanco-primario);
+    background-color: var(--color--negro-primario);
+    display: inline-block;
+    padding: 0.3rem 0rem 0.3rem 1rem;
+    font-family: "Poppins-Bold";
+}
+
+.inscrip-2 {
+    color: var(--color--verde-primario);
+    background-color: var(--color--negro-primario);
+    display: inline-block;
+    padding: 0.3rem 1rem 0.3rem 0rem;
+    font-family: "Poppins-Bold";
+}
+
+.clases-parrafo {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.asterisco {
+    color: var(--color--verde-secundario);
+    font-family: "Poppins-Bold";
+}
+
+.parrafo-clases {
+    font-family: "Poppins-Regular";
+}
+
+.parrafo-clases:nth-child(2) {
+    margin-left: 2rem;
+}
+
+@media screen and (max-width: 1030px) {
+    .planes-container{
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    .container-planes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .planes-titulo {
+        margin-top: 5rem;
+    }
+
+    .caja-planes {
+        margin-top: 4rem;
+    }
+
+    .caja-planes:nth-child(1) {
+        margin-top: 0rem;
+    }
+
+    .clases-parrafo {
+        display: flex;
+        flex-direction: column;
+        margin: 4rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .parrafo-clases:nth-child(2) {
+        margin-left: 0rem;
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .planes-titulo {
+        font-size: 4rem;
+        margin-top: 5rem;
+    }
+}
+
+/*============================| SECCION DE CONTACTO |================================*/
+
+.contacto-container {
+    background-image: url(/assets/competitions/competitionsbackg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+}
+
+.container-contacto-menu {
+    display: flex;
+    justify-content:space-evenly;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.contacto-izquierdo{
+    display: flex;
+    gap: 2rem;
+}
+
+.contacto-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacto-titulo {
+    color: var(--color--verde-primario);
+    font-family: "Poppins-Bold";
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.direccion {
+    display: flex;
+    color: var(--color--blanco-primario);
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+}
+
+.direccion a {
+    color: var(--color--blanco-primario);
+    text-decoration: none;
+}
+
+.direccion img {
+    margin-right: 1rem;
+}
+
+.container-mapa iframe{
+    margin-top: 1rem;
+    width: 28rem;
+    height: 24rem;
+}
+
+.contacto-derecho {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contacto-derecho span {
+    color: var(--color--verde-primario);
+    font-family: "Poppins-Bold";
+    font-size: 2rem;
+}
+
+.contacto-derecho a {
+    color: var(--color--blanco-primario);
+    font-size: 1.5rem;
+}
+
+.contacto-derecho a:hover {
+    color: var(--color--verde-primario);
+    transition: all 0.4s;
+}
+
+.container-linea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linea {
+    background-color: var(--color--verde-primario);
+    height: 0.1rem;
+    width: 80%;
+    margin: 3rem 0rem;
+}
+
+.footer-final {
+    display: flex;
+    color: var(--color--blanco-primario);
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-final p {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .contacto-container {
+        padding: 3rem;
+    }
+
+    .contacto-izquierdo{
+        flex-direction: column;
+    }
+
+    .container-contacto-menu {
+        flex-direction: column;
+        padding: 3rem;
+        align-items: center;
+    }
+}
