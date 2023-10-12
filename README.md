@@ -18,3 +18,9 @@ Este sitio web permite a la empresa ofrecer sus servicios sobre Crossfit, instal
   <li>SWEETALERT2 PARA VENTANAS EMERGENTES</li>
 </ul>
 
+<h2>Colaboradores</h2>
+<ul>
+   <li>Alejandro Mory https://github.com/alejandromory</li>
+   <li>Luis López https://github.com/LuisLR0</li>
+</ul>
+
