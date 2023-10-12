@@ -15,7 +15,7 @@ Este sitio web permite a la empresa ofrecer sus servicios sobre Crossfit, instal
   <li>CSS 3</li>
   <li>JAVASCRIPT</li>
   <li>LIBRERIA AOS PARA ANIMACIONES</li>
-  <li>SWEETALERT2 PARA VENTANAS EMERGENTES</li>
+  <li>SWEETALERT2 PARA POPUP</li>
 </ul>
 
 <h2>Colaboradores</h2>
